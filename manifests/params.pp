@@ -10,7 +10,6 @@ class php::params inherits php::globals {
   $composer_max_age    = 30
   $pear_ensure         = 'present'
   $pear_package_suffix = 'pear'
-  $phpunit_source      = 'https://phar.phpunit.de/phpunit.phar'
   $phpunit_path        = '/usr/local/bin/phpunit'
   $phpunit_max_age     = 30
 
@@ -163,6 +162,8 @@ class php::params inherits php::globals {
   }
 
   if ($php::globals::phpunit_version != undef) {
-    $phpunit_source = "https://phar.phpunit.de/phpunit-$(phpunit_version).phar"
+    $phpunit_source = "https://phar.phpunit.de/phpunit-${phpunit_version}.phar"
+  } else {
+    $phpunit_source = 'https://phar.phpunit.de/phpunit.phar'
   }
 }
