@@ -12,9 +12,10 @@
 #   Path to pid file for fpm
 
 class php::globals (
-  $php_version  = undef,
-  $config_root  = undef,
-  $fpm_pid_file = undef,
+  $php_version      = undef,
+  $phpunit_version  = undef,
+  $config_root      = undef,
+  $fpm_pid_file     = undef,
 ) {
   if $php_version != undef {
     validate_re($php_version, '^[57].[0-9]')
