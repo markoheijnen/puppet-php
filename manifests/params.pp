@@ -161,4 +161,8 @@ class php::params inherits php::globals {
       fail("Unsupported osfamily: ${::osfamily}")
     }
   }
+
+  if ($php::globals::phpunit_version != undef) {
+    $phpunit_source = "https://phar.phpunit.de/phpunit-$(phpunit_version).phar"
+  }
 }
